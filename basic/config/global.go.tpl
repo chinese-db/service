@@ -9,5 +9,5 @@ var (
 	DB          *gorm.DB
 	Rdb         *redis.Client
 	RdbClu      *redis.ClusterClient
-	{{.Package}}Config *{{.Package}}
+	{{.ServiceName}}Config *{{.ServiceName}}
 )

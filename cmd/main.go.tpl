@@ -20,7 +20,7 @@ func main() {
 	s := grpc.NewServer()
 
 	// 注册服务（根据实际生成）
-	// {{.Package}}pb.Register{{.ServiceName}}Server(s, &server{})
+	// {{.ServiceName}}pb.Register{{.ServiceName}}Server(s, &server{})
 
 	zap.S().Infof("{{.ServiceName}} 服务正在监听 %v", lis.Addr())
 	if err = s.Serve(lis); err != nil {

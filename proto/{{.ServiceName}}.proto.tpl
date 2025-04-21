@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-package {{.Package}};
-option go_package = "./;{{.Package}}";
+package {{.ServiceName}};
+option go_package = "./;{{.ServiceName}}";
 
 service {{.ServiceName}} {
   rpc SayHello (HelloRequest) returns (HelloReply) {}

@@ -10,7 +10,7 @@ type Config struct {
 	} `mapstructure:"nacos"`
 }
 
-type {{.Package}} struct {
+type {{.ServiceName}} struct {
 	System struct {
 		Host string `json:"Host"`
 		Port int    `json:"Port"`
