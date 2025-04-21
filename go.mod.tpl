@@ -1,4 +1,4 @@
-module {{.Package}}
+module {{.ServiceName}}
 
 go 1.24.2
 
