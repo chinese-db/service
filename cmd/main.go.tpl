@@ -11,6 +11,9 @@ import (
 
 var port = flag.Int("port", {{.Port}}, "The server port")
 
+//这里更推荐使用动态配置
+//var port = flag.Int("port", config.{{.ServiceName}}Config.SyStem.Prot, "The server port")
+
 func main() {
 	flag.Parse()
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%v", *port))

@@ -27,7 +27,7 @@ func ZapInit() {
 }
 
 func NaCosInit() {
-	initNaCos, err := nacos.InitNacos("../applicatiion.yaml")
+	initNaCos, err := nacos.InitNacos("../application.yaml")
 	if err != nil {
 		zap.S().Error("nacos出现错误", err.Error())
 		return

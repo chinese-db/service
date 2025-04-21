@@ -1,5 +1,7 @@
 package config
 
+//这里使用了Nacos,当然你也可以不使用
+
 type Config struct {
 	Nacos struct {
 		Namespace string `mapstructure:"namespace"`
