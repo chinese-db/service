@@ -7,10 +7,10 @@ message HelloRequest {
   string name = 1;
 }
 
-message HelloReply {
+message HelloResponse {
   string message = 1;
 }
 
 service {{.ServiceName}} {
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc SayHello (HelloRequest) returns (HelloResponse) {}
 }
