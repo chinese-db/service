@@ -1,4 +1,4 @@
-module github.com/chinese-db/service
+module {{.Package}}
 
 go 1.24.2
 

@@ -6,8 +6,7 @@ import (
 	"github.com/chinese-db/common-package/nacos"
 	"github.com/chinese-db/common-package/redis"
 	"go.uber.org/zap"
-
-	"github.com/chinese/service/basic/config"
+	"{{.Package}}/basic/config"
 )
 
 func init() {
@@ -33,14 +32,14 @@ func NaCosInit() {
 		zap.S().Error("nacos出现错误", err.Error())
 		return
 	}
-	err = json.Unmarshal([]byte(initNaCos), &config.OrderConfig)
+	err = json.Unmarshal([]byte(initNaCos), &config.{{.Package}})
 	if err != nil {
 		zap.S().Error("解析失败", err.Error())
 		return
 	}
 }
 func MySQLInit() {
-	appConfig := config.OrderConfig.MySQLConfig
+	appConfig := config.{{.Package}}.MySQLConfig
 	newMysql := mysql.NewMysql(appConfig.User, appConfig.Password, appConfig.Host, appConfig.Port, appConfig.Database)
 	config.DB = newMysql.MysqlINit()
 }
@@ -48,9 +47,9 @@ func MySQLInit() {
 func RedisInit() {
 	redisConfig := redis.PublicRedisConfig{
 		PublicRedisCli: redis.PublicRedisCli{
-			Addr:     config.OrderConfig.RedisConfig.Host,
-			Password: config.OrderConfig.RedisConfig.Password,
-			DB:       config.OrderConfig.RedisConfig.DB,
+			Addr:     config.{{.Package}}.RedisConfig.Host,
+			Password: config.{{.Package}}.RedisConfig.Password,
+			DB:       config.{{.Package}}.RedisConfig.DB,
 		},
 		PublicRedisClu: redis.PublicRedisClu{},
 	}

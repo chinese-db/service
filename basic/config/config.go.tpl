@@ -10,7 +10,7 @@ type Config struct {
 	} `mapstructure:"nacos"`
 }
 
-type OrderSrv struct {
+type {{.Package}} struct {
 	System struct {
 		Host string `json:"Host"`
 		Port int    `json:"Port"`
@@ -28,22 +28,4 @@ type OrderSrv struct {
 		Password string `json:"Password"`
 		DB       int    `json:"DB"`
 	} `json:"RedisConfig"`
-	GeoCode struct {
-		ApiKey string `json:"ApiKey"`
-	} `json:"GeoCode"`
-	StockServer struct {
-		Host string `json:"Host"`
-		Port int    `json:"Port"`
-		Name string `json:"Name"`
-	} `json:"StockServer"`
-	PayServer struct {
-		Host string `json:"Host"`
-		Port int    `json:"Port"`
-		Name string `json:"Name"`
-	} `json:"PayServer"`
-	GoodsServer struct {
-		Host string `json:"Host"`
-		Port int    `json:"Port"`
-		Name string `json:"Name"`
-	} `json:"GoodsServer"`
 }
